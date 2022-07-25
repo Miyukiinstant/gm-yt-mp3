@@ -7,16 +7,18 @@
     $root = 'https://getn.topsandtees.space/s/PXxDeloNjO';
     $yt = $_GET['yt'];
     $yt = explode("&list",$yt)[0];
-    $fields = [
-    'q' => $yt,
-    ];
-    $postdata = http_build_query($fields);
-    $ch = curl_init();
-    curl_setopt($ch,CURLOPT_URL, $root);
-    curl_setopt($ch,CURLOPT_POST, true);
-    curl_setopt($ch,CURLOPT_POSTFIELDS, $postdata);
-    curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
-    $result = curl_exec($ch);
+    $data = array(
+        'q' => $yt
+    );
+    $options = array(
+        'http' => array(
+            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query($data)
+        )
+    );
+    $context  = stream_context_create($options);
+    $result = file_get_contents($root, false, $context);
     $url  =explode('"',$result);
     $final = $host . $url[247] . "/mp3";
     $temp = file_get_contents($final);
