@@ -1,6 +1,6 @@
 <?php
     if (!isset($_GET['yt'])){
-        echo "Provide a valid yt url";
+        echo "Provide a valid yt url by adding ?yt=linkhere";
         return;
     }
     $host = 'https://getn.topsandtees.space';
@@ -20,7 +20,5 @@
     $final = $host . $url[247] . "/mp3";
     $temp = file_get_contents($final);
     $audio = explode('"',$temp)[171];
-    echo $audio;
-    //return;
     header("Location:".$audio) ;
 ?>
