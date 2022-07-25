@@ -6,6 +6,7 @@
     $host = 'https://getn.topsandtees.space';
     $root = 'https://getn.topsandtees.space/s/PXxDeloNjO';
     $yt = $_GET['yt'];
+    $yt = explode("&list",$yt)[0];
     $fields = [
     'q' => $yt,
     ];
