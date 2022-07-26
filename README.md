@@ -1,4 +1,4 @@
-# YT-Mp3-Grabber
+# YT-Mp3-Grabber for GMOD and more!
 I made this so you can get playable mp3 from youtube links
 ## Requirements
     PHP Server
