@@ -27,7 +27,8 @@
     $audio = explode('"',$temp)[171];
     if($_GET['json']){
         echo json_encode(array("audio_file"=>$audio));
-        return;
-    }    
-   //header("Location:".$audio) ;
+    }else{
+        header("Location:$audio");
+    }
+    
 ?>
