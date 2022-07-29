@@ -25,5 +25,9 @@
     $final = $host . $url[247] . "/mp3";
     $temp = file_get_contents($final);
     $audio = explode('"',$temp)[171];
-    header("Location:".$audio) ;
+    if($_GET['json']){
+        echo json_encode(array("audio_file"=>$audio));
+        return;
+    }    
+   //header("Location:".$audio) ;
 ?>
