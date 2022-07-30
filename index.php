@@ -77,8 +77,7 @@
     $host = 'https://getn.topsandtees.space';
     $root = $host."/s/".explode("https://getn.topsandtees.space/",explode('"',file_get_contents($root))[55])[1]; //Fetches the main root link for furhter requests 
     $yt = $_GET['yt'];
-    $yt = explode("&list",$yt)[0];
-    $yt = explode("?list",$yt)[0];
+    $yt = explode("list=",$yt)[0];
     $data = array(
         'q' => $yt
     );
