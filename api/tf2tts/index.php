@@ -1,4 +1,6 @@
 <?php
+    $audio = "https://cdn.15.ai/audio/";
+    $root = "https://api.15.ai/app/getAudioFile5";
     $data = array(
         "character"=>"Miss Pauling",
         "emotion"=>"Contextual",
@@ -12,7 +14,7 @@
         )
     );
     $context  = stream_context_create($options);
-    $result = file_get_contents("https://api.15.ai/app/getAudioFile5", false, $context);
+    $result = file_get_contents($root, false, $context);
     if ($result === FALSE) { /* Handle error */ }
-    echo json_decode($result) -> wavNames[0];
+    header($audio + json_decode($result) -> wavNames[0]);
 ?>
