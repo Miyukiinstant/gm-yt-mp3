@@ -13,6 +13,7 @@
         <img class="blur" src="https://imgur.com/olPAxXY.gif"></img>
         <div style="margin-top: 5%;">
             <a href="?yt=">Request Audio</a>
+            <a href="../api/tf2tts/">TTS Ai</a>
         </div>
     </div>
 </body>

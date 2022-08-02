@@ -1,5 +1,8 @@
 <?php
-    if(!isset($_GET['text']) or !isset($_GET['author'])){return;}
+    if(!isset($_GET['text']) or !isset($_GET['author'])){
+        require_once 'error.php';    
+        return;
+    }
     $audio = "https://cdn.15.ai/audio/";
     $root = "https://api.15.ai/app/getAudioFile5";
     $data = array(
