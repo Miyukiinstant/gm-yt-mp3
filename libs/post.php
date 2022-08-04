@@ -1,5 +1,5 @@
 <?php  
-    function POST15ai(string $url,array $data){
+    function POST15ai(string $url,array $data): mixed{
         //Create cURL resource
         $ch1 = curl_init();
         //Set cURL options
